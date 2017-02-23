@@ -7,7 +7,7 @@
     <ProjectGuid>{76D2C39B-04A7-4297-8978-1D8ECBD8CA67}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Models</RootNamespace>
+    <RootNamespace>Tibox.Models</RootNamespace>
     <AssemblyName>Models</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

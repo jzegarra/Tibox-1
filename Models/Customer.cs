@@ -1,4 +1,4 @@
-namespace Models
+namespace Tibox.Models
 {
     public partial class Customer
     {

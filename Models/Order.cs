@@ -1,6 +1,6 @@
 using System;
 
-namespace Models
+namespace Tibox.Models
 {
     public partial class Order
     {
