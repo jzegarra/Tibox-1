@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tibox.Models", "Models\Tibo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tibox.Repository", "Tibox.Repository\Tibox.Repository.csproj", "{E2FBFDC3-165C-4361-9DC1-5D1E4FCD6DC8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tibox.UnitOfWork", "Tibox.UnitOfWork\Tibox.UnitOfWork.csproj", "{C3B1138B-8B6A-41C8-8D99-641E8F4F0CEA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Test", "Unit Test", "{AACE3B60-AC33-4288-8F22-C3BB0769BF3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tibox.DataAccess.Tests", "Tibox.DataAccess.Tests\Tibox.DataAccess.Tests.csproj", "{997D7AF3-CA4B-4AB0-BF2B-024A71CF401A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +27,19 @@ Global
 		{E2FBFDC3-165C-4361-9DC1-5D1E4FCD6DC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2FBFDC3-165C-4361-9DC1-5D1E4FCD6DC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2FBFDC3-165C-4361-9DC1-5D1E4FCD6DC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3B1138B-8B6A-41C8-8D99-641E8F4F0CEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3B1138B-8B6A-41C8-8D99-641E8F4F0CEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3B1138B-8B6A-41C8-8D99-641E8F4F0CEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3B1138B-8B6A-41C8-8D99-641E8F4F0CEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{997D7AF3-CA4B-4AB0-BF2B-024A71CF401A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{997D7AF3-CA4B-4AB0-BF2B-024A71CF401A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{997D7AF3-CA4B-4AB0-BF2B-024A71CF401A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{997D7AF3-CA4B-4AB0-BF2B-024A71CF401A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{997D7AF3-CA4B-4AB0-BF2B-024A71CF401A} = {AACE3B60-AC33-4288-8F22-C3BB0769BF3D}
 	EndGlobalSection
 EndGlobal
