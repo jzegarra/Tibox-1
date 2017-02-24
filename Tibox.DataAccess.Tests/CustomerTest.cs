@@ -20,5 +20,12 @@ namespace Tibox.DataAccess.Tests
             var customerList = _unit.Customers.GetAll();
             Assert.AreEqual(customerList.Count() > 0, true);
         }
+
+        [TestMethod]
+        public void Get_All_Customer_By_StoreProcedure()
+        {
+            var customerList = _unit.Customers.GetAll("dbo.CustomerOrder");
+            Assert.AreEqual(customerList.Count() > 0, true);
+        }
     }
 }

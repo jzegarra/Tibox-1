@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Configuration;
+using Dapper;
 
 namespace Tibox.Repository
 {
@@ -25,6 +26,14 @@ namespace Tibox.Repository
             using (var connection = new SqlConnection(_connectionString))
             {
                 return connection.GetAll<T>();
+            }
+        }
+
+        public IEnumerable<T> GetAll(string storeName)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                return connection.Query<T>(storeName);
             }
         }
 
