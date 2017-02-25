@@ -8,7 +8,7 @@ namespace Tibox.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly string _connectionString;
+        protected readonly string _connectionString;
         public Repository()
         {
             _connectionString = ConfigurationManager.ConnectionStrings["NorthwindConnectionString"].ConnectionString;

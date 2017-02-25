@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Tibox.UnitOfWork;
 using System.Linq;
+using Tibox.Models;
 
 namespace Tibox.DataAccess.Tests
 {
@@ -22,10 +23,26 @@ namespace Tibox.DataAccess.Tests
         }
 
         [TestMethod]
-        public void Get_All_Customer_By_StoreProcedure()
+        public void Insert_Customer()
         {
-            var customerList = _unit.Customers.GetAll("dbo.CustomerOrder");
-            Assert.AreEqual(customerList.Count() > 0, true);
+            var customer = new Customer
+            {
+                FirstName="Julio",
+                LastName="Velarde",
+                City="Huancavelica",
+                Country="Peru",
+                Phone="555-555-555"
+            };
+            Assert.AreEqual(_unit.Customers.Insert(customer)>0, true);
+        }
+
+        [TestMethod]
+        public void Delete_Customer()
+        {
+            var customer = _unit.Customers.SearchByNames("Julio", "Velarde");
+            Assert.AreEqual(customer!=null, true);
+
+            Assert.AreEqual(_unit.Customers.Delete(customer), true);
         }
     }
 }
