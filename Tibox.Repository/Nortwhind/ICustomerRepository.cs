@@ -9,6 +9,7 @@ namespace Tibox.Repository
 {
     public interface ICustomerRepository : IRepository<Customer>
     {
-        Customer SearchByNames(string firstName, string lastName);      
+        Customer SearchByNames(string firstName, string lastName);
+        
     }
 }

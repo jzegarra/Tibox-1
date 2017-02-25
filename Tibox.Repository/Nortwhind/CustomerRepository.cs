@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Tibox.Models;
 using Dapper.Contrib.Extensions;
+using Dapper;
 
 namespace Tibox.Repository
 {
@@ -15,7 +16,12 @@ namespace Tibox.Repository
         {
             using (var connection = new SqlConnection(_connectionString))
             {
-                return connection.GetAll<Customer>().FirstOrDefault(x => x.FirstName == firstName && x.LastName == lastName);
+                var parameters = new DynamicParameters();
+                parameters.Add("@firstName", firstName);
+                parameters.Add("@lastName", lastName);
+
+                return connection
+                        .QueryFirst<Customer>("dbo.SearchByNames", parameters, commandType: System.Data.CommandType.StoredProcedure);
             }
         }
     }

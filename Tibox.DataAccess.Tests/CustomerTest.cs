@@ -37,12 +37,44 @@ namespace Tibox.DataAccess.Tests
         }
 
         [TestMethod]
+        public void First_Customer_By_Names()
+        {
+            var customer = _unit.Customers.SearchByNames("Maria", "Anders");
+            Assert.AreEqual(customer != null, true);
+
+            Assert.AreEqual(customer.FirstName, "Maria");
+            Assert.AreEqual(customer.LastName, "Anders");
+        }
+
+        [TestMethod]
+        public void First_Customer_By_Id()
+        {
+            var customer = _unit.Customers.GetEntityById(1);
+            Assert.AreEqual(customer != null, true);
+
+            Assert.AreEqual(customer.Id, 1);
+            Assert.AreEqual(customer.FirstName, "Maria");
+            Assert.AreEqual(customer.LastName, "Anders");
+        }
+
+        [TestMethod]
         public void Delete_Customer()
         {
             var customer = _unit.Customers.SearchByNames("Julio", "Velarde");
-            Assert.AreEqual(customer!=null, true);
+            Assert.AreEqual(customer != null, true);
 
             Assert.AreEqual(_unit.Customers.Delete(customer), true);
         }
+
+        [TestMethod]
+        public void Update_Customer()
+        {
+            var customer = _unit.Customers.GetEntityById(1);            
+            Assert.AreEqual(customer != null, true);
+
+            Assert.AreEqual(_unit.Customers.Update(customer), true);
+        }
+
+
     }
 }
