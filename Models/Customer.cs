@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Tibox.Models
 {    
     [Table("Customer")]
-    public partial class Customer
+    public class Customer
     {
         public int Id { get; set; }                
         public string FirstName { get; set; }        

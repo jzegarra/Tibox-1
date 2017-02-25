@@ -29,14 +29,6 @@ namespace Tibox.Repository
             }
         }
 
-        public IEnumerable<T> GetAll(string storeName)
-        {
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                return connection.Query<T>(storeName);
-            }
-        }
-
         public T GetEntityById(int id)
         {
             using (var connection = new SqlConnection(_connectionString))

@@ -4,7 +4,7 @@ using System;
 namespace Tibox.Models
 {
     [Table("[Order]")]
-    public partial class Order
+    public class Order
     {
         public int Id { get; set; }
         public DateTime OrderDate { get; set; }        

@@ -9,6 +9,5 @@ namespace Tibox.Repository
         bool Update(T entity);
         T GetEntityById(int id);
         IEnumerable<T> GetAll();
-        IEnumerable<T> GetAll(string storeName);
     }
 }

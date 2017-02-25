@@ -1,9 +1,10 @@
-﻿using Tibox.Models;
+﻿using System;
+using Tibox.Models;
 using Tibox.Repository;
 
 namespace Tibox.UnitOfWork
 {
-    public class TiboxUnitOfWork : IUnitOfWork
+    public class TiboxUnitOfWork : IUnitOfWork,IDisposable  
     {
         public TiboxUnitOfWork()
         {
@@ -18,5 +19,10 @@ namespace Tibox.UnitOfWork
         public IRepository<OrderItem> OrderItems { get; private set; }
         public IRepository<Product> Products { get; private set; }
         public IRepository<Supplier> Suppliers { get; private set; }
+
+        public void Dispose()
+        {
+            this.Dispose();
+        }
     }
 }
