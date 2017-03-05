@@ -24,5 +24,20 @@ namespace Tibox.Repository
                         .QueryFirst<Customer>("dbo.SearchByNames", parameters, commandType: System.Data.CommandType.StoredProcedure);
             }
         }
+
+        public Customer CustomerWithOrders(int id)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@customerId", id);
+                using (var multi = connection.QueryMultiple("dbo.CustomerWithOrders", parameters, commandType: System.Data.CommandType.StoredProcedure))
+                {
+                    var profile = multi.Read<Customer>().Single();
+                    profile.Orders = multi.Read<Order>();
+                    return profile;
+                }                
+            }
+        }
     }
 }

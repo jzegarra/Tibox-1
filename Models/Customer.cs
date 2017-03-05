@@ -11,6 +11,7 @@ namespace Tibox.Models
         public string LastName { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
-        public string Phone { get; set; }        
+        public string Phone { get; set; }
+        public IEnumerable<Order> Orders { get; set; }
     }
 }

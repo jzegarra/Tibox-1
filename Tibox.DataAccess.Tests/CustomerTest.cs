@@ -75,6 +75,13 @@ namespace Tibox.DataAccess.Tests
             Assert.AreEqual(_unit.Customers.Update(customer), true);
         }
 
+        [TestMethod]
+        public void Customer_With_Orders()
+        {
+            var customerWithOrder = _unit.Customers.CustomerWithOrders(1);
+            Assert.AreEqual(customerWithOrder != null, true);
 
+            Assert.AreEqual(customerWithOrder.Orders.Any(), true);
+        }
     }
 }
