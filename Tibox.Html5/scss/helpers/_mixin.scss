@@ -25,24 +25,3 @@
         @media #{$bp-xxl} { @content; }
     }
 }
-
-@mixin background-color($color){
-    @if $color =='red' {
-        background-color: $button-color-red;
-    } 
-    @else if $color =='green' {
-        background-color: $button-color-green;
-    }
-    @else if $color =='black' {
-        background-color: $button-color-black;
-    } 
-    @else if $color =='red-hover' {
-        background-color: $button-hover-color-red;
-    } 
-    @else if $color =='green-hover' {
-        background-color: $button-hover-color-green;
-    }
-    @else if $color =='black-hover' {
-        background-color: $button-hover-color-black;
-    }
-}
