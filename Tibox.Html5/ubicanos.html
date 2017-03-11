@@ -1,18 +1,19 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-    <title>Bienvenidos a Tibox Web Site</title>    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <title>Bienvenidos a Tibox Web Site</title>
+    <link href="styles/styles.min.css" rel="stylesheet" />
 </head>
 <body>
     <header>
-        <div>
-            <a class="headerlogo" href="index.html">
-                <img src="images/logo.jpeg" />
-            </a>
-            <span id="headername">Bienvenidos a la Pagina de Tibox.</span>            
-        </div>
-        <nav class="backgroundgradient">
-            <ul>
+        <a class="headerlogo" href="index.html">
+            <img src="images/logo.jpeg" />
+        </a>
+        <nav class="dropdown">
+            <button class="menu-title">Menu</button>
+            <ul class="dropdown-content">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="registro.html">Registro</a></li>
                 <li><a href="productos.html">Nuestros Productos</a></li>
@@ -20,22 +21,34 @@
             </ul>
         </nav>
     </header>
-   
+    <h3>Nuestra ubicación.</h3>
     <section>
-        <header>Bienvenidos a Tibox.</header>
-        <span>
-            Tibox es una compañia enfocada en el rubro de <mark>Desarrollo de Software a Medida</mark>
-        </span>
+        <div id="googleMap" class="map"></div>
     </section>
-    <aside id="events">
-        <header>Lo Nuevo!</header>
-        <ul>
-            <li><a href="#">Nuevas noticias.</a></li>            
-        </ul>
-    </aside>
-    
     <footer>
         Nuestra Dirección
     </footer>
+    <script>
+        function myMap() {            
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }        
+        }
+
+        function showPosition(position) {
+            var location = { lat: position.coords.latitude, lng: position.coords.longitude };
+            var map = new google.maps.Map(document.getElementById('googleMap'), {
+                zoom: 15,
+                center: location
+            });
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                title: 'Tibox!'
+            });
+        }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArsk3-zGJC2vZoTYyqYWjgU6J0fdZjzCg&callback=myMap"></script>
 </body>
 </html>

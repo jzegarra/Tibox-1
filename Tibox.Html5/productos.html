@@ -1,18 +1,19 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-    <title>Bienvenidos a Tibox Web Site</title>    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <title>Bienvenidos a Tibox Web Site</title>
+    <link href="styles/styles.min.css" rel="stylesheet" />
 </head>
 <body>
     <header>
-        <div>
-            <a class="headerlogo" href="index.html">
-                <img src="images/logo.jpeg" />
-            </a>
-            <span id="headername">Bienvenidos a la Pagina de Tibox.</span>            
-        </div>
-        <nav class="backgroundgradient">
-            <ul>
+        <a class="headerlogo" href="index.html">
+            <img src="images/logo.jpeg" />
+        </a>
+        <nav class="dropdown">
+            <button class="menu-title">Menu</button>
+            <ul class="dropdown-content">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="registro.html">Registro</a></li>
                 <li><a href="productos.html">Nuestros Productos</a></li>
@@ -20,20 +21,19 @@
             </ul>
         </nav>
     </header>
-   
+    <h3>Nuestros productos.</h3>    
     <section>
-        <header>Bienvenidos a Tibox.</header>
-        <span>
-            Tibox es una compañia enfocada en el rubro de <mark>Desarrollo de Software a Medida</mark>
-        </span>
+        <video width="320" height="240" controls>
+            <source src="html5.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </section>
-    <aside id="events">
-        <header>Lo Nuevo!</header>
-        <ul>
-            <li><a href="#">Nuevas noticias.</a></li>            
-        </ul>
-    </aside>
-    
+    <section>
+        <audio controls>
+            <source src="Adrian y Sonia-Que Bonito.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
     <footer>
         Nuestra Dirección
     </footer>

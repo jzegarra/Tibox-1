@@ -1,18 +1,19 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-    <title>Bienvenidos a Tibox Web Site</title>    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <title>Bienvenidos a Tibox Web Site</title>
+    <link href="styles/styles.min.css" rel="stylesheet" />
 </head>
 <body>
     <header>
-        <div>
-            <a class="headerlogo" href="index.html">
-                <img src="images/logo.jpeg" />
-            </a>
-            <span id="headername">Bienvenidos a la Pagina de Tibox.</span>            
-        </div>
-        <nav class="backgroundgradient">
-            <ul>
+        <a class="headerlogo" href="index.html">
+            <img src="images/logo.jpeg" />
+        </a>
+        <nav class="dropdown">
+            <button class="menu-title">Menu</button>
+            <ul class="dropdown-content">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="registro.html">Registro</a></li>
                 <li><a href="productos.html">Nuestros Productos</a></li>
@@ -20,20 +21,60 @@
             </ul>
         </nav>
     </header>
-   
     <section>
-        <header>Bienvenidos a Tibox.</header>
-        <span>
-            Tibox es una compañia enfocada en el rubro de <mark>Desarrollo de Software a Medida</mark>
-        </span>
-    </section>
-    <aside id="events">
-        <header>Lo Nuevo!</header>
-        <ul>
-            <li><a href="#">Nuevas noticias.</a></li>            
-        </ul>
-    </aside>
-    
+        <h3>Registro.</h3>
+        <form>
+            <p oninput="x.value = parseFloat(a.value) + parseFloat(b.value) + parseFloat(c.value) + parseFloat(d.value)">
+                Experiencia laboral:
+                EF: <input type="number" id="a" value="0" min="0" step="0.1"> <br />
+                ADO: <input type="number" id="b" value="0" min="0"> <br />
+                MVC: <input type="number" id="c" value="0" min="0"> <br />
+                JavaScript: <input type="number" id="d" value="0" min="0"> <br />
+                TOTAL=<output name="x" for="a b c d"></output>
+            </p>
+            <p>
+                Codigo: <input type="text" readonly />
+            </p>
+            <p>
+                <datalist id="browsers">
+                    <option value="Internet Explorer">
+                    <option value="Firefox">
+                    <option value="Chrome">
+                    <option value="Opera">
+                    <option value="Safari">
+                </datalist>
+                Browser Preferido: <input list="browsers">
+            </p>
+            <p>
+                Nombre: <input type="text" required title="Ingresar el nombre." />
+            </p>
+            <p>
+                Fecha de nacimiento: <input type="date" value="2013-09-01" />
+            </p>
+            <p>
+                Edad: <input name="edad" type="number" min=18 max=75 step="0.1" />
+            </p>
+            <p>
+                Correo: <input type="email" placeholder="email@domain.com" />
+            </p>
+            <p>
+                Pagina Web: <input type="url">
+            </p>
+            Telefono: <input type="tel" pattern="\d\d\d\-\d\d\d\d">
+            </p>
+            <p>
+                Color Favorito: <input type="color" value="#b97a40">
+            </p>
+            <p>
+                Certificados: <input type="file" multiple accept=".xls,.xlsx" />
+            </p>
+            <p>
+                Curriculum: <input type="file" accept=".pdf" />
+            </p>
+            <p>
+                <input type="submit" value="submit" /> <!-- formnovalidate -->
+            </p>
+</section>    
     <footer>
         Nuestra Dirección
     </footer>
