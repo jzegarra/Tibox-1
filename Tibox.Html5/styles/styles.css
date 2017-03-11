@@ -8,7 +8,7 @@ body {
       margin-left: 5rem;
       margin-right: 5rem; } }
   body header {
-    position: absolute;
+    position: fixed;
     right: 0;
     left: 0;
     top: 0;
@@ -18,14 +18,15 @@ body {
   body footer {
     background: #000;
     color: #fff;
-    height: 100px;
-    position: absolute;
+    height: 2rem;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     text-align: center; }
   body section {
-    padding-top: 4rem; }
+    padding-top: 4rem;
+    margin-bottom: 4rem; }
 
 .headerlogo img {
   float: left;
@@ -117,10 +118,10 @@ nav {
 .dropdown:hover .dropdown-content {
   display: block;
   right: 0;
-  top: 1rem;
   position: fixed; }
   @media (min-width: 768px) {
     .dropdown:hover .dropdown-content {
+      top: 1rem;
       right: auto;
       top: auto;
       position: relative; } }

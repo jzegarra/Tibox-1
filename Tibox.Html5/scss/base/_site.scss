@@ -1,7 +1,7 @@
 ﻿body {
     background-color: $background-color;
     margin-left: 2rem;
-    margin-right: 2rem;
+    margin-right: 2rem;    
 
     @include break-point(md) {
         margin-left: 5rem;
@@ -9,7 +9,7 @@
     }
 
     header {
-        position: absolute;
+        position: fixed;
         right: 0;
         left: 0;
         top: 0;
@@ -21,8 +21,8 @@
     footer {
         background: $site-color-black;
         color: $site-color-white;
-        height: 100px;
-        position: absolute;
+        height: 2rem;
+        position: fixed;
         bottom: 0;
         left: 0;
         right: 0;
@@ -31,6 +31,7 @@
 
     section {
         padding-top: 4rem;
+        margin-bottom:4rem;
     }
 }
 
