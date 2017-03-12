@@ -35,6 +35,9 @@
   width: 40px;
   height: auto; }
 
+input:invalid {
+  border: 2px solid red; }
+
 .button-base, .menu-title {
   display: block;
   margin-top: 1rem;
