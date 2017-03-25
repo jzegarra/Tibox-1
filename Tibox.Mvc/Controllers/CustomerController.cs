@@ -4,11 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Tibox.Models;
+using Tibox.Mvc.FilterActions;
 using Tibox.UnitOfWork;
 
 namespace Tibox.Mvc.Controllers
 {
     [OutputCache(Duration = 0)]
+    [ErrorHandler]
     public class CustomerController : Controller
     {
         private readonly IUnitOfWork _unit;
@@ -56,6 +58,11 @@ namespace Tibox.Mvc.Controllers
         {
             var id = _unit.Customers.Delete(customer);
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Error()
+        {
+            throw new TimeZoneNotFoundException();            
         }
     }
 }
