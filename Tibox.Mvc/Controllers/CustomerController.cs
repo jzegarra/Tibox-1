@@ -10,10 +10,10 @@ namespace Tibox.Mvc.Controllers
 {
     public class CustomerController : Controller
     {
-        private readonly TiboxUnitOfWork _unit;
-        public CustomerController()
+        private readonly IUnitOfWork _unit;
+        public CustomerController(IUnitOfWork unit)
         {
-            _unit = new TiboxUnitOfWork();
+            _unit = unit;
         }
         public ActionResult Index()
         {

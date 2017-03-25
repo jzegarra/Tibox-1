@@ -1,12 +1,17 @@
 using Dapper.Contrib.Extensions;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Tibox.Models
 {    
-    [Table("Customer")]
+    [Table("Customer")]    
     public class Customer
     {
-        public int Id { get; set; }                
+        [ScaffoldColumn(false)]
+        public int Id { get; set; }
+        [Display(Name ="First Name")]
+        [Required(ErrorMessage = "This field is required")]
+        [StringLength(40,ErrorMessage ="The max lenght is 40 chars.")]
         public string FirstName { get; set; }        
         public string LastName { get; set; }
         public string City { get; set; }
