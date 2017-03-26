@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Tibox.Models;
 using Tibox.Mvc.FilterActions;
@@ -11,6 +8,7 @@ namespace Tibox.Mvc.Controllers
 {
     [OutputCache(Duration = 0)]
     [ErrorHandler]
+    [RoutePrefix("Customer")]
     public class CustomerController : Controller
     {
         private readonly IUnitOfWork _unit;
@@ -59,10 +57,35 @@ namespace Tibox.Mvc.Controllers
             var id = _unit.Customers.Delete(customer);
             return RedirectToAction("Index");
         }
+        [Route("List/{page:int}/{rows:int}")]
+        public PartialViewResult List(int page, int rows)
+        {
+            var startRecord = (rows * (page - 1)) + 1;
+            var endRecord = rows * page;            
+            return PartialView(_unit.Customers.PagedList(startRecord, endRecord));
+        }
 
+        [Route("Count/{rows:int}")]
+        public JsonResult Count(int rows)
+        {
+            var totalRecords = _unit.Customers.Count();
+            var totalPages = totalRecords % rows != 0 ? (totalRecords / rows) + 1 : totalRecords / rows;
+            var page = new
+            {
+                TotalRecords= totalRecords,
+                TotalPages=totalPages
+            };
+            return Json(page, JsonRequestBehavior.AllowGet);
+        }
         public ActionResult Error()
         {
             throw new TimeZoneNotFoundException();            
+        }
+
+        private bool PageValidation(int page, int rows)
+        {
+            
+            return false;
         }
     }
 }

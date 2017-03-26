@@ -51,5 +51,13 @@ namespace Tibox.Repository
                 return connection.Query<Customer>("dbo.CustomerPagedList", parameters, commandType: System.Data.CommandType.StoredProcedure);
             }
         }
+
+        public int Count()
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                return connection.ExecuteScalar<int>("SELECT COUNT(Id) FROM dbo.Customer");
+            }
+        }
     }
 }

@@ -12,5 +12,6 @@ namespace Tibox.Repository
         Customer SearchByNames(string firstName, string lastName);
         Customer CustomerWithOrders(int id);
         IEnumerable<Customer> PagedList(int startRow, int endRow);
+        int Count();
     }
 }
